@@ -37,11 +37,11 @@ changeValuee(value: 4, a: 3.33)
 //3. Հայտարարել Ունիվերսալ ֆունկցիա changeArrayValue(arr, a) անունով որի առաջին արգումենտը Ունիվերսալ տիպի մասիվ է իսկ եկրորդ արգումենտը Double տիպի. Ֆունկցիան պետք է arr -ի արժեքները մեծացնի a անգամ և վերադարձնի նոր մասիվը։
 
 protocol MyArrayMultiply {
-    static func *(l: Self, r: Double) -> Self
+    static func *(l: Self, r: Self) -> Self
 }
 extension Double: MyArrayMultiply {}
 
-func changeArrayValue<T: MyArrayMultiply>(arr:[T], a: Double) -> [T] {
+func changeArrayValue<T: MyArrayMultiply>(arr:[T], a: T) -> [T] {
     var newArr: [T] = []
     
     for i in arr {
@@ -55,11 +55,11 @@ print(changeArrayValue(arr: [2,3,4], a: 3.33))
 //4. Հայտարարել Ունիվերսալ ֆունկցիա changeArrayValue(arr, a) անունով որի առաջին արգումենտը Ունիվերսալ տիպի մասիվ է իսկ եկրորդ արգումենտը Double տիպի. Ֆունկցիան պետք է arr -ի արժեքները մեծացնի a ով և վերադարձնի նոր մասիվը։
 
 protocol MyArrayPlus {
-    static func +(l: Self, r: Double) -> Self
+    static func +(l: Self, r: Self) -> Self
 }
 extension Double: MyArrayPlus {}
 
-func changeArrayValuePlus<T: MyArrayPlus>(arr:[T], a: Double) -> [T] {
+func changeArrayValuePlus<T: MyArrayPlus>(arr:[T], a: T) -> [T] {
     var newArr: [T] = []
     
     for i in arr {
